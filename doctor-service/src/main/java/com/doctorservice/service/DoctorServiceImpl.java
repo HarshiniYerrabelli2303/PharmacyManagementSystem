@@ -74,6 +74,7 @@ public class DoctorServiceImpl implements DoctorService {
 		
 	}
 
+	//to view All doctors
 	@Override
 	public List<DoctorEntity> viewAllDoctors() {
 		
