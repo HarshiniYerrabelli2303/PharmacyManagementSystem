@@ -1,4 +1,4 @@
-package com.PharmacyMangementSystem.OrderService;
+package com.orderservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
