@@ -26,6 +26,7 @@ public class DoctorController {
 	@Autowired
 	private DoctorService doctorservice;
 	
+	
 	@PostMapping(value ="/registerDoctor")
 	public DoctorEntity registerDoctor(@RequestBody Doctor doctor) {
 		return doctorservice.registerDoctor(doctor);
