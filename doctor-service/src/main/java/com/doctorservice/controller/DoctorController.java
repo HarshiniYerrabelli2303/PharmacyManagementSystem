@@ -22,6 +22,7 @@ import com.doctorservice.service.DoctorService;
 @CrossOrigin(origins = "http://localhost", maxAge = 3600)
 public class DoctorController {
 	
+	
 	@Autowired
 	private DoctorService doctorservice;
 	
