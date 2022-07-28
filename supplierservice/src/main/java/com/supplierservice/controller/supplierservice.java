@@ -13,7 +13,7 @@ public class supplierservice
 	@GetMapping
 	public String getSupplier()
 	{
-		return  "Hello world";
+		return  "Hello Supplier";
 	}
 
 	
