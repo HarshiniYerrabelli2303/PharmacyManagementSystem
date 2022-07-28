@@ -17,4 +17,10 @@ public class DoctorExceptionHandler extends ResponseEntityExceptionHandler {
 		String bodyOfResponse = "User with given id is not present";
 		return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
 	}
+	
+	@ExceptionHandler(value = { UserAlreadyExistException.class })
+	protected ResponseEntity<Object> handleConflict2(RuntimeException ex, WebRequest request) {
+		String bodyOfResponse = "User with given email id  is already present";
+		return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+	}
 }

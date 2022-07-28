@@ -18,7 +18,7 @@ public class Converter {
 		return doctor;
 	}
 	
-	//customerEntity to customerDto
+	//doctorEntity to doctorDto
 	public DoctorDto convertToDoctorDto	(Doctor doctor) {
 		DoctorDto doctorDto=new DoctorDto();
 		
