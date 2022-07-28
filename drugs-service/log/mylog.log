@@ -443,3 +443,9 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 [2022-07-28T19:51:05.005Z] [com.netflix.discovery.DiscoveryClient] [DiscoveryClient-CacheRefreshExecutor-0] [1013] [INFO ] Application version is -1: false
 [2022-07-28T19:51:05.005Z] [com.netflix.discovery.DiscoveryClient] [DiscoveryClient-CacheRefreshExecutor-0] [1097] [INFO ] Getting all instance registry info from the eureka server
 [2022-07-28T19:51:05.005Z] [com.netflix.discovery.DiscoveryClient] [DiscoveryClient-CacheRefreshExecutor-0] [1106] [INFO ] The response status is 200
+[2022-07-28T19:53:14.014Z] [org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin] [RMI TCP Connection(6)-127.0.0.1] [159] [INFO ] Application shutdown requested.
+[2022-07-28T19:53:14.014Z] [org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry] [RMI TCP Connection(6)-127.0.0.1] [62] [INFO ] Unregistering application DRUGS-SERVICE with eureka with status DOWN
+[2022-07-28T19:53:14.014Z] [com.netflix.discovery.DiscoveryClient$3] [RMI TCP Connection(6)-127.0.0.1] [1352] [INFO ] Saw local status change event StatusChangeEvent [timestamp=1659018194143, current=DOWN, previous=UP]
+[2022-07-28T19:53:14.014Z] [com.netflix.discovery.DiscoveryClient] [DiscoveryClient-InstanceInfoReplicator-0] [873] [INFO ] DiscoveryClient_DRUGS-SERVICE/inlen8520018531.corp.capgemini.com:drugs-service:8099: registering service...
+[2022-07-28T19:53:14.014Z] [com.netflix.discovery.DiscoveryClient] [DiscoveryClient-InstanceInfoReplicator-0] [882] [INFO ] DiscoveryClient_DRUGS-SERVICE/inlen8520018531.corp.capgemini.com:drugs-service:8099 - registration status: 204
+[2022-07-28T19:53:14.014Z] [com.netflix.discovery.DiscoveryClient] [RMI TCP Connection(6)-127.0.0.1] [935] [INFO ] Shutting down DiscoveryClient ...
