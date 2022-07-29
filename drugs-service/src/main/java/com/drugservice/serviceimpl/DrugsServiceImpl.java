@@ -42,9 +42,11 @@ public class DrugsServiceImpl implements DrugsService {
 	@Override
 	public String UpdateDrugs(Drugs drug,int drugId) {
 		String message=null;
-		DrugsEntity drugs=null;
-		 drugs=drugsRepo.save(convert.convertToDrugsEntity(drug));
-		 if(drugs!=null) {
+		
+		Optional<DrugsEntity> drugsEntity = drugsRepo.findById(drugId);
+		
+		 if(drugsEntity.isPresent()) {
+			drugsRepo.save(convert.convertToDrugsEntity(drug));
 			 message="update Successfull";
 			 logDoctor.info(message);
 		 }else {

@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Drugs {
 
+	public static final String SEQUENCE_NAME = "drugs_sequence";
+	private int drugId;
 	private String suplierEmail;
 	private String drugName;
 	private int quantity;
@@ -24,6 +26,16 @@ public class Drugs {
 		this.batchId = batchId;
 		this.expiredDate = expiredDate;
 		this.price = price;
+	}
+
+
+	public int getDrugId() {
+		return drugId;
+	}
+
+
+	public void setDrugId(int drugId) {
+		this.drugId = drugId;
 	}
 
 
@@ -78,8 +90,8 @@ public class Drugs {
 
 	@Override
 	public String toString() {
-		return "Drugs [suplierEmail=" + suplierEmail + ", drugName=" + drugName + ", quantity=" + quantity
-				+ ", batchId=" + batchId + ", expiredDate=" + expiredDate + ", price=" + price + "]";
+		return "Drugs [drugId=" + drugId + ", suplierEmail=" + suplierEmail + ", drugName=" + drugName + ", quantity="
+				+ quantity + ", batchId=" + batchId + ", expiredDate=" + expiredDate + ", price=" + price + "]";
 	}
 	
 	

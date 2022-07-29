@@ -3,7 +3,6 @@ package com.drugservice.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +16,7 @@ import com.drugservice.dto.Drugs;
 import com.drugservice.entity.DrugsEntity;
 import com.drugservice.exception.DrugsNotFoundException;
 import com.drugservice.service.DrugsService;
+import com.drugservice.serviceimpl.SequenceGeneratorService;
 
 @RestController
 @RequestMapping("/drugs")
@@ -25,8 +25,12 @@ public class DrugsController {
 	@Autowired
 	private DrugsService drugsService;
 	
+	@Autowired
+	private SequenceGeneratorService sequenceGeneratorService;
+	
 	@PostMapping("/addDrug")
 	public String AddDrugs(@RequestBody Drugs drug){
+		drug.setDrugId(sequenceGeneratorService.generateSequence(Drugs.SEQUENCE_NAME));
 		return  drugsService.AddDrugs(drug);
 		
 	}

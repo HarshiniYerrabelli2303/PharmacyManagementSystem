@@ -3,12 +3,16 @@ package com.drugservice.entity;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection="drugs")
 public class DrugsEntity {
 
+	@Transient
+    public static final String SEQUENCE_NAME = "drugs_sequence";
+	
 	@Id
 	private int drugId;
 	private String suplierEmail;
