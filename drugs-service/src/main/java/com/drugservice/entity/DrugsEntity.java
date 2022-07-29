@@ -1,10 +1,19 @@
-package com.drugservice.dto;
+package com.drugservice.entity;
 
 import java.util.Date;
 
-public class Drugs {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-	public static final String SEQUENCE_NAME = "drugs_sequence";
+
+@Document(collection="drugs")
+public class DrugsEntity {
+
+	@Transient
+    public static final String SEQUENCE_NAME = "drugs_sequence";
+	
+	@Id
 	private int drugId;
 	private String suplierEmail;
 	private String drugName;
@@ -13,12 +22,13 @@ public class Drugs {
 	private Date expiredDate;
 	private double price;
 	
-	public Drugs() {
+	
+	public DrugsEntity() {
 		super();
 	}
 
-	
-	public Drugs(String suplierEmail, String drugName, int quantity, int batchId, Date expiredDate, double price) {
+	public DrugsEntity(String suplierEmail, String drugName, int quantity, int batchId, Date expiredDate,
+			double price) {
 		super();
 		this.suplierEmail = suplierEmail;
 		this.drugName = drugName;
@@ -28,16 +38,13 @@ public class Drugs {
 		this.price = price;
 	}
 
-
 	public int getDrugId() {
 		return drugId;
 	}
 
-
 	public void setDrugId(int drugId) {
 		this.drugId = drugId;
 	}
-
 
 	public String getSuplierEmail() {
 		return suplierEmail;
@@ -63,20 +70,20 @@ public class Drugs {
 		this.quantity = quantity;
 	}
 
-	public Date getExpiredDate() {
-		return expiredDate;
-	}
-
-	public void setExpiredDate(Date expiredDate) {
-		this.expiredDate = expiredDate;
-	}
-
 	public int getBatchId() {
 		return batchId;
 	}
 
 	public void setBatchId(int batchId) {
 		this.batchId = batchId;
+	}
+
+	public Date getExpiredDate() {
+		return expiredDate;
+	}
+
+	public void setExpiredDate(Date expiredDate) {
+		this.expiredDate = expiredDate;
 	}
 
 	public double getPrice() {
@@ -87,11 +94,11 @@ public class Drugs {
 		this.price = price;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Drugs [drugId=" + drugId + ", suplierEmail=" + suplierEmail + ", drugName=" + drugName + ", quantity="
-				+ quantity + ", batchId=" + batchId + ", expiredDate=" + expiredDate + ", price=" + price + "]";
+		return "DrugsEntity [drugId=" + drugId + ", suplierEmail=" + suplierEmail + ", drugName=" + drugName
+				+ ", quantity=" + quantity + ", batchId=" + batchId + ", expiredDate=" + expiredDate + ", price="
+				+ price + "]";
 	}
 	
 	
