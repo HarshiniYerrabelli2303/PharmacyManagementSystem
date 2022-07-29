@@ -26,32 +26,32 @@ public class DrugsController {
 	private DrugsService drugsService;
 	
 	@PostMapping("/addDrug")
-	public ResponseEntity<?> AddDrugs(@RequestBody Drugs drug){
-		String save=drugsService.AddDrugs(drug);
-		return ResponseEntity.ok(save);
+	public String AddDrugs(@RequestBody Drugs drug){
+		return  drugsService.AddDrugs(drug);
+		
 	}
 	
 	@PutMapping("/editDrug/{drugId}")
-	public ResponseEntity<?> editDrugs(@PathVariable("drugId") int drugId,@RequestBody Drugs drug){
-		String save=drugsService.UpdateDrugs(drug,drugId);
-		return ResponseEntity.ok(save);
+	public String editDrugs(@PathVariable("drugId") int drugId,@RequestBody Drugs drug){
+		return drugsService.UpdateDrugs(drug,drugId);
+		
 	}
 	
 	@DeleteMapping("/deleteDrug/{drugId}")
-	public ResponseEntity<?> DeleteDrugs(@PathVariable("drugId") int drugId) throws DrugsNotFoundException{
-		String save=drugsService.DeleteDrugs(drugId);
-		return ResponseEntity.ok(save);
+	public String DeleteDrugs(@PathVariable("drugId") int drugId) throws DrugsNotFoundException{
+		return drugsService.DeleteDrugs(drugId);
+		
 	}
 	
 	@GetMapping("/getDrug/{drugId}")
-	public ResponseEntity<?> getDrugs(@PathVariable("drugId") int drugId) throws DrugsNotFoundException{
-		Drugs save=drugsService.viewDrugsById(drugId);
-		return ResponseEntity.ok(save);
+	public Drugs getDrugs(@PathVariable("drugId") int drugId) throws DrugsNotFoundException{
+		return drugsService.viewDrugsById(drugId);
+		
 	}
 	
 	@GetMapping("/getAllDrug")
-	public ResponseEntity<?> getAllDrugs() throws DrugsNotFoundException{
-		List<DrugsEntity> save=drugsService.viewAllDrugs();
-		return ResponseEntity.ok(save);
+	public List<DrugsEntity> getAllDrugs() throws DrugsNotFoundException{
+		return drugsService.viewAllDrugs();
+		 
 	}
 }
