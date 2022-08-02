@@ -1,4 +1,4 @@
-package com.pharmacymanagementsystem.pharmacyapigateway;
+package com.pharmacyapigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
