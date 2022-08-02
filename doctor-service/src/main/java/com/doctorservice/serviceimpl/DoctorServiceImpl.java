@@ -37,7 +37,9 @@ public class DoctorServiceImpl implements DoctorService {
 		 if(doctor!=null) {
 		 message="register Successfull";
 		 }else {
+			 
 			 message="register not Successfull";
+			 logDoctor.info(message);
 		 }
 		 return message;
 		
@@ -49,7 +51,7 @@ public class DoctorServiceImpl implements DoctorService {
 	}
 
 	@Override
-	public String updateProfile(DoctorDto doctorDto) {
+	public String updateProfile(DoctorDto doctorDto,int userId) {
 		String message=null;
 		Doctor doctor=null;
 		 doctor=doctorRepo.save(converter.convertToDoctorEntity(doctorDto));

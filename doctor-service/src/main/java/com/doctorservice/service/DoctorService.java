@@ -14,7 +14,7 @@ public interface DoctorService {
 	
 	public List<Doctor> viewAllDoctors();
 	
-	public String updateProfile(DoctorDto doctor);
+	public String updateProfile(DoctorDto doctor, int userId);
 	
 	public String deleteProfile(int userId)throws UserNotFoundException;
 	

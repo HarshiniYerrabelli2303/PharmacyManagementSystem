@@ -1,32 +1,22 @@
 package com.doctorservice.dto;
 
-import java.util.Date;
-
-import javax.validation.constraints.NotNull;
-
 public class DoctorDto {
 
+	public static final String SEQUENCE_NAME = "doctors_sequence";
 	private int userId;
-	
-	@NotNull
+
 	private String firstName;
-	
-	@NotNull
+
 	private String lastName;
-	
-	@NotNull
+
 	private String email;
-	
-	@NotNull
+
 	private String phone;
-	
-	@NotNull
+
 	private String gender;
-	
-	
-	@NotNull
+
 	private String password;
-	
+
 	public DoctorDto() {
 		super();
 	}
@@ -40,7 +30,7 @@ public class DoctorDto {
 		this.email = email;
 		this.phone = phone;
 		this.gender = gender;
-	
+
 		this.password = password;
 	}
 
@@ -92,8 +82,6 @@ public class DoctorDto {
 		this.gender = gender;
 	}
 
-	
-
 	public String getPassword() {
 		return password;
 	}
@@ -105,10 +93,7 @@ public class DoctorDto {
 	@Override
 	public String toString() {
 		return "DoctorDto [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
-				+ email + ", phone=" + phone + ", gender=" + gender + ",O password="
-				+ password + "]";
+				+ email + ", phone=" + phone + ", gender=" + gender + ",O password=" + password + "]";
 	}
-	
-	
-	
+
 }

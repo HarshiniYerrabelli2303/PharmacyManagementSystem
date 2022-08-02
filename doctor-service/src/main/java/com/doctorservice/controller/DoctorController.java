@@ -3,6 +3,7 @@ package com.doctorservice.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ import com.doctorservice.entity.Doctor;
 import com.doctorservice.exception.UserAlreadyExistException;
 import com.doctorservice.exception.UserNotFoundException;
 import com.doctorservice.service.DoctorService;
+import com.doctorservice.serviceimpl.SequenceGeneratorService;
 
 @RestController
 @RequestMapping("/doctors")
@@ -28,29 +30,39 @@ public class DoctorController {
 	@Autowired
 	private DoctorService doctorService;
 	
+	@Autowired
+	private SequenceGeneratorService sequenceGeneratorService;
+	
+	
 	@PostMapping(value ="/registerDoctor")
-	public String registerDoctor(@RequestBody DoctorDto doctorDto) throws UserAlreadyExistException {
-		return doctorService.doctorRegistration(doctorDto);
+	public ResponseEntity<?> registerDoctor(@RequestBody DoctorDto doctorDto) throws UserAlreadyExistException {
+		doctorDto.setUserId(sequenceGeneratorService.generateSequence(DoctorDto.SEQUENCE_NAME));
+		String save=doctorService.doctorRegistration(doctorDto);
+		return ResponseEntity.ok(save);
 		
 	}
 	
-	@PutMapping(value ="/editProfile")
-	public String editProfile(@RequestBody DoctorDto doctorDto)throws UserNotFoundException{
-		return doctorService.updateProfile(doctorDto);
+	@PutMapping(value ="/editProfile/{id}")
+	public ResponseEntity<?> editProfile(@PathVariable("id")int userId ,@RequestBody DoctorDto doctorDto)throws UserNotFoundException{
+		String save=doctorService.updateProfile(doctorDto,userId);
+		return ResponseEntity.ok(save);
 		
 	}
 	@GetMapping(value = "/viewProfile/{id}")
-	public DoctorDto viewProfile(@PathVariable("id")int userId)throws UserNotFoundException{
-		return doctorService.viewProfile(userId);
+	public ResponseEntity<?> viewProfile(@PathVariable("id")int userId)throws UserNotFoundException{
+		DoctorDto view= doctorService.viewProfile(userId);
+		return ResponseEntity.ok(view);
 	}
 	
 	@DeleteMapping(value = "/deleteProfile/{id}")
-	public String deleteProfile(@PathVariable("id")int userId)throws UserNotFoundException{
-		return doctorService.deleteProfile(userId);
+	public ResponseEntity<?> deleteProfile(@PathVariable("id")int userId)throws UserNotFoundException{
+		String message = doctorService.deleteProfile(userId);
+		return ResponseEntity.ok(message);
 	}
 
 	@GetMapping(value = "/viewAllDoctors")
-	public List<Doctor> viewAllDoctors() {
-		return doctorService.viewAllDoctors();
+	public ResponseEntity<?> viewAllDoctors() {
+		List<Doctor> viewAll = doctorService.viewAllDoctors();
+		return ResponseEntity.ok(viewAll);
 	}
 }
