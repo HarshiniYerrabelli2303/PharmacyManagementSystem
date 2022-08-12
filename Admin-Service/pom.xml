@@ -9,10 +9,10 @@
 		<version>2.7.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.doctor-service</groupId>
-	<artifactId>doctor-service</artifactId>
+	<groupId>com.admin-service</groupId>
+	<artifactId>admin-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>doctor-service</name>
+	<name>admin-service</name>
 	<description>PharmacyMangementSystem</description>
 	<properties>
 		<java.version>11</java.version>
