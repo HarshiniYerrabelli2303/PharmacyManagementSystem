@@ -25,7 +25,7 @@ public class AdminServiceApplicationTests {
 	
 
 	@Test
-	public void testRegisterCustomer() {
+	public void testRegisterAdmin() {
 	Admin admin = new Admin();
 
 	admin.setFirstName("raju");
