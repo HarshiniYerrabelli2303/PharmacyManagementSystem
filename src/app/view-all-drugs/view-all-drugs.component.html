@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="card">
+      <h3>Drugs List</h3>
+    <table class="table table striped">
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Drug Name </th>
+                <th> Quantity </th>
+                <th> Batch Id </th>
+                <th> Expired Date </th>
+                <th> Price </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let drug of drugs" >
+                <td>{{ drug.drugId }}</td>
+                <td>{{ drug.drugName }}</td>
+                <td>{{ drug.quantity }}</td>
+                <td>{{ drug.batchId }}</td>
+                <td>{{ drug.expiredDate }}</td>
+                <td>{{ drug.price }}</td>
+                <td>
+                    <button (click)="updateDrug(drug.drugId)" class="btn btn-info">Update</button>
+                    <button (click)="deleteDrug(drug.drugId)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                </td>
+            </tr>
+           <tr *ngIf="!drugs || drugs.length==0">
+                <td colspan="7">
+                    No Drugs to display
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> 
+</div>

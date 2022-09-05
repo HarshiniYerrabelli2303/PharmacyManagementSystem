@@ -1,0 +1,79 @@
+<div class="container">
+     
+    <h3>Update Drugs</h3>
+    <div class="card">
+            <h4>Add some Details</h4>
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                    <!-- input Suplier email -->
+                    <div class="form-group">
+                            <label for="suplierEmail"><b> Suplier Email</b></label>
+                            <input formControlName="suplierEmail" id="suplierEmail" type="email" class="form-control" [(ngModel)] = "drug.suplierEmail">
+          
+                            <!-- validation for suplier email -->
+                            <div *ngIf="f.suplierEmail.touched && f.suplierEmail.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.suplierEmail.errors?.['required']" style="color: red;">Suplier Email is required.</div>
+                            </div>
+                    </div>  <br/>
+                    <!-- input drug name-->
+                    <div class="form-group">
+                      
+                            <label for="drugName"><b>Drug Name</b></label>
+                            <input formControlName="drugName" id="drugName" type="text" class="form-control">
+                                    
+                            <!-- validation for  -->
+                            <div *ngIf="f.drugName.touched && f.drugName.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.drugName.errors?.['required']" style="color: red;">Drug Name is required.</div>
+                                    
+                            </div>
+                    </div>  <br/>       
+                    <!-- input quantity -->
+                    <div class="form-group">
+                      
+                            <label for="quantity"><b>Quantity</b></label>
+                            <input formControlName="quantity" id="quantity" type="number" class="form-control">
+                            
+                            <!-- validation for Quantity-->
+                            <div *ngIf="f.quantity.invalid && f.quantity.touched" class="alert alert-danger">
+                                    <div *ngIf="f.quantity.errors?.['required']" style="color: red;">Quantity is required</div>
+                            </div>        
+                    </div> <br/>
+                   
+                    <!-- input batch id -->
+                    <div class="form-group">
+                    
+                            <label for="batchId"><b>Batch Id</b></label>
+                            <input formControlName="batchId" id="batchId" type="number" class="form-control">
+                                    
+                            <!-- validation for batch id -->
+                            <div *ngIf="f.batchId.invalid && f.batchId.touched" class="alert alert-danger">
+                                    <div *ngIf="f.batchId.errors?.['required']" style="color: red;">Batch id is required</div>
+                            </div>        
+                    </div> <br/>
+                    <!-- input Expired date -->
+                    <div class="form-group">
+                    
+                                <label for="expiredDate"><b>Expired Date</b></label>
+                                <input formControlName="expiredDate" id="expiredDate" type="date" min="2023-01-01"class="form-control">
+                                        
+                                <!-- validation for contact No -->
+                                <div *ngIf="f.expiredDate.invalid && f.expiredDate.touched" class="alert alert-danger">
+                                        <div *ngIf="f.expiredDate.errors?.['required']" style="color: red;">Expired date is required</div>
+                                </div>        
+                        </div> <br/>
+                    <!-- input price -->
+                    <div class="form-group">
+                    
+                            <label for="price"><b>Price</b></label>
+                            <input formControlName="price" id="price" type="number" class="form-control">
+                                    
+                            <!-- validation for contact No -->
+                            <div *ngIf="f.price.invalid && f.price.touched" class="alert alert-danger">
+                                    <div *ngIf="f.price.errors?.['required']" style="color: red;">Price is required</div>
+                            </div>        
+                    </div> <br/>
+                    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button><br/>
+            </form>
+    </div>
+   
+</div>
+
