@@ -36,7 +36,7 @@ export class ViewAllDrugsComponent implements OnInit {
   deleteDrug(drugId: number){
     this.drugsService.deleteDrugs(drugId).subscribe(data=>{
       console.log(data);
-     
+      location.reload();
       
     }
     

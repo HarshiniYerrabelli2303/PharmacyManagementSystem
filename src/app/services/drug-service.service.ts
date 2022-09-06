@@ -29,7 +29,7 @@ export class DrugServiceService {
   
   }
   deleteDrugs(id:number):Observable<Object> {
-    alert("if you want to delete")
+    confirm("do you want to delete this drug")
     return this.httpClient.delete('http://localhost:8099/drugs/deleteDrug/' + id);
     
   }
