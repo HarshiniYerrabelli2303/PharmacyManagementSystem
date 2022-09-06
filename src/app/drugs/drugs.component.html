@@ -71,8 +71,15 @@
                                     <div *ngIf="f.price.errors?.['required']" style="color: red;">Price is required</div>
                             </div>        
                     </div> <br/>
-                    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button><br/>
+                   
+                    <button class="btn btn-primary" type="submit" >Submit</button>
+
+                    <button class = "btn btn-success" (click)="back()"style="margin-left: 10px;">Back</button>
+                    
             </form>
+            
+            
+            <div class="alert alert-warning" *ngIf="invalidDrugs">{{ message }}</div>
     </div>
-   
+    
 </div>

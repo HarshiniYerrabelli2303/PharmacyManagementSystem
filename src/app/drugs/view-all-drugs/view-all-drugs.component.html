@@ -5,6 +5,7 @@
         <thead>
             <tr>
                 <th> ID </th>
+                <th> Suplier  </th>
                 <th> Drug Name </th>
                 <th> Quantity </th>
                 <th> Batch Id </th>
@@ -16,6 +17,7 @@
         <tbody >
             <tr *ngFor="let drug of drugs" >
                 <td>{{ drug.drugId }}</td>
+                <td>{{ drug.suplierEmail}}</td>
                 <td>{{ drug.drugName }}</td>
                 <td>{{ drug.quantity }}</td>
                 <td>{{ drug.batchId }}</td>

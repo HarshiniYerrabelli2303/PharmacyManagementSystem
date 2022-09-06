@@ -1,8 +1,9 @@
   import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { DrugServiceService } from '../drug-service.service';
+
 import { Drugs } from '../modules/drugs';
+import { DrugServiceService } from '../services/drug-service.service';
 
 @Component({
   selector: 'app-drugs',
@@ -11,6 +12,8 @@ import { Drugs } from '../modules/drugs';
 })
 export class DrugsComponent implements OnInit {
    
+  invalidDrugs = false;
+  message = '';
  
     form = new FormGroup({
       suplierEmail: new FormControl('', [Validators.required]),
@@ -31,15 +34,28 @@ export class DrugsComponent implements OnInit {
   ngOnInit(): void {
   }
 submit(){
-  this.drugService.insertData(this.form).subscribe(data=>{
-    console.log(data);
-this.goToDrugsList();
-  },
-  error=>console.log(error)
-  );
+
+ 
+    if (this.form.valid === false) {
+      this.invalidDrugs = true;
+      this.message = 'You must fill in all the fields!';
+    }
+    else { 
+      this.drugService.insertData(this.form).subscribe(
+        data=>{
+         console.log(data);
+       
+      },
+      error=>{console.log(error)},
+     
+      );
+      location.reload();
+      this.message = 'successfully added the drugs';
+  }
+ 
   
 }
-goToDrugsList(){
-  this.router.navigate(['/viewDrugs'])
+back(){
+  this.router.navigate(['/viewDrug'])
 }
 }

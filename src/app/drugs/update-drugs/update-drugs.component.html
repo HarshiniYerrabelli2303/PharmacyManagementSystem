@@ -1,0 +1,42 @@
+
+ <div class="col-md-6 offset-md-3">
+        <h3> Update Drugs </h3>
+        <form (ngSubmit) = "onSubmit()">
+        
+            <div class="form-group">
+                <label> Suplier Email</label>
+                <input type="email" class ="form-control" id = "suplierEmail"
+                    [(ngModel)] = "drug.suplierEmail" name = "suplierEmail">
+            </div>
+        
+            <div class="form-group">
+                <label> Drug Name</label>
+                <input type="text" class ="form-control" id = "drugName"
+                    [(ngModel)] = "drug.drugName" name = "drugName">
+            </div>
+        
+            <div class="form-group">
+                <label> Quantity</label>
+                <input type="number" class ="form-control" id = "quantity"
+                    [(ngModel)] = "drug.quantity" name = "quantity">
+            </div>
+            <div class="form-group">
+                <label> Batch Id</label>
+                <input type="number" class ="form-control" id = "batchId"
+                    [(ngModel)] = "drug.batchId" name = "batchId">
+            </div>
+            <div class="form-group">
+                <label> Expired Date</label>
+                <input type="date" class ="form-control" id = "expiredDate"
+                    [(ngModel)] = "drug.expiredDate" name = "expiredDate">
+            </div>
+            <div class="form-group">
+                <label> Price</label>
+                <input type="number" class ="form-control" id = "price"
+                    [(ngModel)] = "drug.price" name = "price">
+            </div>
+        
+        </form>
+        <button class = "btn btn-success" type ="submit"[disabled]="loading">Submit</button>
+        <button class = "btn btn-success" type ="submit"(click)="back()">Back</button>
+        </div> 
