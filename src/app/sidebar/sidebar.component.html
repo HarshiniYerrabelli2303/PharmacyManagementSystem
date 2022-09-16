@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false" style="background-color: rgb(240, 240, 236);">
+    <mat-toolbar style="background-color: rgb(117, 23, 204)">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/dashboard">Dashboard</a>
+      <a mat-list-item routerLink="/viewDrug">View All Drugs</a>
+      <a mat-list-item href="/addDrugs">Add Drugs</a>
+      <a mat-list-item href="/products">Products</a>
+      <a mat-list-item href="/cart">Cart</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+     
+      <span>pharmacy-management-system</span>
+      <div><button class="btn btn-warning" routerLink="/cart"> 
+        <i style="font-size:30px;"class="fas fa-cart-plus"></i>
+        <div style="font-size: 10px;" class="badge bg-success">{{totalItem}}</div>
+      </button>
+    </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,17 +1,7 @@
 
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-    <ul class = "navbar-nav">
-        <li class = "nav-item">
-            <a routerLink="veiwDrugs" routerLinkActive="active" class="nav-link" >Drugs List</a>
-        </li>
-        <li class = "nav-item">
-            <a routerLink="addDrugs" routerLinkActive="active" class="nav-link" >Add Drugs</a>
-        </li>
-    </ul>
-</nav>
-
-<h1 class="text-center"> {{title}} </h1>
+<app-sidebar></app-sidebar>
 <div class = "container">
+    
     <router-outlet></router-outlet>
 </div>
 <footer class = "footer">

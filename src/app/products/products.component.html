@@ -1,0 +1,37 @@
+<div class="container">
+    
+  <div class="form-row align-items-center">    
+    <div class="col-md-9">     
+      <div class="input-group mb-4 mt-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Search Products</div>
+        </div>
+        <input [(ngModel)] = "drugName" (ngModelChange)="search()"class="form-control" placeholder="Please enter any product name to search ">
+      </div>
+    </div>   
+</div>
+
+  
+
+</div>
+<div class="container">
+<div class="row">  
+  <div class="col-md-4"  *ngFor = "let drug of drugs | filter : __searchedProduct   ">
+    <div class="card"> 
+     
+      <div class="card-body" >
+        <h6 class="card-title font-weight-bold">{{drug.drugName}}</h6>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="text-right"> <small> Rs {{drug.price}} </small> </p>
+          </div>
+        </div>
+        <button class="btn btn-sm btn-primary" (click)="addToCart(drug)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+ 
