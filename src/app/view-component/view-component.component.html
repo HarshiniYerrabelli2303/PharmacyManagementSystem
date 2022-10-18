@@ -1,0 +1,45 @@
+ 
+
+
+    <h2>Your Profile</h2>
+
+  
+<div class="container">
+    <div class="card ">
+    <table class = "table table-striped" >
+        <thead>
+           <tr>
+              <th>UserId</th>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Gender</th>
+              <th>PhoneNumber</th>
+              <th>EmailId</th>
+              <th>UserName</th>
+              <th>Role</th>
+              <th>Actions</th>
+           </tr>
+        </thead>
+        <tbody>
+     <tr>
+           <td>{{users.userId}}</td>
+           <td>{{users.firstName}}</td>
+           <td>{{users.lastName}}</td>
+           <td>{{users.gender}}</td>
+           <td>{{users.phone}}</td>
+           <td>{{users.email}}</td>
+           <td>{{users.userName}}</td>
+           <td>{{users.role}}</td>
+          <td>
+         <button (click) ="updateProfile(users.userId,users.firstName,users.lastName,
+         users.gender,users.phone,users.email,users.userName,users.role
+        )" class="btn btn-info">Update</button>
+         <button (click)="delete(users.userId)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+      </td>
+        </tr>
+         
+        </tbody>
+     </table>
+    
+    </div>
+   </div>

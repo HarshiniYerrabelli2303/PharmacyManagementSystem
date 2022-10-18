@@ -1,0 +1,34 @@
+header{
+    position: fixed;
+    top:0; left: 0; right:0;
+    background:lightseagreen;
+     z-index: 1000; 
+    display: flex;
+   
+      
+  }
+
+  header .navbar a{
+    align-items: center; 
+    justify-content: left; 
+    color:black;
+    font-size: 1rem;
+    margin:0 .8rem;
+    
+  }
+  
+  header .navbar a:hover{
+    color:rgb(23, 21, 21);
+  }
+  h2{
+    text-align: right;
+    
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 40px;
+    margin-top: 140px;
+    background:lightseagreen;
+}

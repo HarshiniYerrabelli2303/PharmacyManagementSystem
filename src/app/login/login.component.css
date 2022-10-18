@@ -1,0 +1,14 @@
+ .card{
+    border:none;
+    width: 500px;
+    padding: 50px;
+    margin-left: 300px;
+    top: 100%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: lightseagreen; 
+} 
+
+ 
+  
+ 

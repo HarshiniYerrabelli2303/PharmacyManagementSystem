@@ -2,7 +2,7 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Drugs } from '../modules/drugs';
+import { Drugs } from '../models/drugs';
 import { DrugServiceService } from '../services/drug-service.service';
 
 @Component({

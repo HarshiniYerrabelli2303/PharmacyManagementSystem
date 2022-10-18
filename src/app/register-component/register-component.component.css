@@ -1,0 +1,26 @@
+.card{
+    border:none;
+    width: 500px;
+    padding: 40px;
+    margin-left: 300px;
+    top: 75%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: lightseagreen;
+   
+  }
+  option:first {
+    color: rgb(234, 234, 234);
+}
+  select {
+      width: 420px;
+      height: 40px;
+      margin: 2px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  
+  label{
+    text-align:left;
+  }

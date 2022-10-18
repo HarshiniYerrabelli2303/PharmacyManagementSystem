@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { CartItem } from '../models/CartItem';
+
 import { CartserviceService } from '../services/cartservice.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,19 +15,26 @@ import { CartserviceService } from '../services/cartservice.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  public products : any = [];
-  public grandTotal : number=0;
-  constructor(private cartService : CartserviceService) { }
+   public products : any = [];
+   cartId:number=0;
+  // public grandTotal : number=0;
+   constructor(private cartService : CartserviceService,private user:UsersService) { }
 
   ngOnInit(): void {
-    this.cartService.getProducts()
-    .subscribe(res=>{
-      this.products = res;
-     this.calcCartTotal();
+    this.user.viewProfileByName().subscribe((data:any)=>{
+this.cartId=data.cartId;
     })
-    
+    this.cartService.getProducts()
+    .subscribe((res:any)=>{
+      this.products = res;
+     this.grandTotal();
+    })
+
   }
  
+  grandTotal(){
+    return this.cartService.calculateGrandTotal();
+  }
   removeItem(item: any){
     this.cartService.removeCartItem(item);
   }
@@ -41,11 +55,7 @@ export class CartComponent implements OnInit {
       this.quantity=this.i;
     }
   }
-  calcCartTotal(){
-    this.grandTotal =0
-    this.products.array.forEach((element:any) => {
-      this.grandTotal+=(element.quantity*element.price);
-    });
 
-  }
+
+
 }

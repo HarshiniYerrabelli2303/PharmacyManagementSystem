@@ -1,0 +1,53 @@
+<div class="card">
+<h1 class="text-center" >Add Suppliers Form</h1>
+<h5 class="text-center" >Please Enter the Details below </h5>
+
+<div class="col-md-6 offset-md-3">
+    
+    <form [formGroup]="form" (ngSubmit) = "onSave()">
+        <div class="form-group">
+            <label>Supplier Name <sup style="color: red;">*</sup></label>
+            <input type="text" class ="form-control" id = "name"
+            formControlName = "name" name = "name">
+                <!-- validation for  -->
+                <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                    <div *ngIf="f.name.errors?.['required']" style="color: red;">Supplier Name is required.</div>
+        </div>
+        <div class="form-group">
+            <label> Suplier Email <sup style="color: red;">*</sup></label>
+            <input type="email" class ="form-control" id = "supplierEmail"
+            formControlName = "supplierEmail" name = "supplierEmail">
+                 <!-- validation for suplier email -->
+                 <div *ngIf="f.supplierEmail.touched && f.supplierEmail.invalid" class="alert alert-danger">
+                    <div *ngIf="f.supplierEmail.errors?.['required']" style="color: red;">Supplier Email is required.</div>
+        </div>
+    
+        <div class="form-group">
+            <label> Contact No<sup style="color: red;">*</sup></label>
+            <input type="text" class ="form-control" id = "contactNo"
+            formControlName = "contactNo" name = "contactNo">
+             <!-- validation for contact No -->
+             <div *ngIf="f.contactNo.invalid && f.contactNo.touched" class="alert alert-danger">
+                <div *ngIf="f.contactNo.errors?.['required']" style="color: red;">Contact no is required</div>
+        </div>        
+                
+        </div>
+        
+        <div class="form-group">
+            <label> Drug Name<sup style="color: red;">*</sup></label>
+            <input type="text" class ="form-control" id = "drugName"
+            formControlName = "drugName" name = "drugName">
+                <!-- validation for  -->
+                <div *ngIf="f.drugName.touched && f.drugName.invalid" class="alert alert-danger">
+                    <div *ngIf="f.drugName.errors?.['required']" style="color: red;">Drug Name is required.</div>
+        </div>
+    
+   
+       
+    
+    
+    <button [disabled]="!form.valid" class = "btn btn-success" type ="submit">Submit</button>
+        </div>
+        </div>
+    
+    

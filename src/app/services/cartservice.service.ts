@@ -1,5 +1,10 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
+import { Cart } from '../models/cart.model';
+import { CartItem } from '../models/CartItem';
+import { Drugs } from '../models/drugs';
+
 
 
 
@@ -7,12 +12,16 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartserviceService {
+
+carts:Cart=new Cart();
+ 
+
   public cartData: any  = []; 
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);
-  public search = new BehaviorSubject<string>("");
+ public search = new BehaviorSubject<string>("");
 
-  constructor() { }
+
   getProducts(){
     return this.productList.asObservable();
   }
@@ -23,11 +32,12 @@ export class CartserviceService {
   }
  
   addtoCart(drugs : any){
-    
+   
+  
     this.cartItemList.push(drugs);
 
     this.productList.next(this.cartItemList);
-    this.getTotalPrice();
+    this.calculateGrandTotal();
     console.log(this.cartItemList)
   }
   getTotalPrice() : number{
@@ -55,5 +65,17 @@ export class CartserviceService {
     alert("are you really want to empty the cart")
   }
 
+
+  constructor( private httpClient: HttpClient) { }
+
  
+ 
+ calculateGrandTotal() {
+  var grandTotal = 0.0;
+  for (var i = 0; i < this.carts.products.length; i++)
+    grandTotal = grandTotal + this.carts.products[i].productPrice;
+  return grandTotal;
+
+}
+
 }

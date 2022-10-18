@@ -1,0 +1,106 @@
+<div style="text-align: center;">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6">
+    <div class="card">
+      <h1>Register Form</h1>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+      
+             <div class="form-group">
+            <!-- <label for="name"><b>Name </b></label><br> -->
+            <input formControlName="firstName" id="firstName" type="text" class="form-control" placeholder="FirstName">
+            <div *ngIf="f.firstName.touched && f.firstName.invalid" class="alert alert-danger">
+              <div *ngIf="f.firstName.errors?.['required']" style="color: red;">Firstname is required.</div>
+              <div *ngIf="f.firstName.errors?.['minlength']" style="color: red;">Firstname should be 3 character.</div>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <!-- <label for="name"><b>Name </b></label><br> -->
+            <input formControlName="lastName" id="lastName" type="text" class="form-control" placeholder="Last Name">
+            <div *ngIf="f.lastName.touched && f.lastName.invalid" class="alert alert-danger">
+              <div *ngIf="f.lastName.errors?.['required']" style="color: red;">Lastname is required.</div>
+              <div *ngIf="f.lastName.errors?.['minlength']" style="color: red;">Lastname should be 3 character.</div>
+            </div>
+          </div>
+          <br>
+          
+          <div class="form-group">
+            
+            <select formControlName="gender" id="gender" class="form-control" class="input-select" >
+                <option value="" disabled selected>Gender</option>
+                <option vlaue="female">Female</option>
+                <option vlaue="male">Male</option>
+                <option vlaue="others">Others</option>
+                
+              </select>
+              <div *ngIf="f.gender.touched && f.gender.invalid" class="alert alert-danger">
+                <div *ngIf="f.gender.errors?.['required']" style="color: red;"> Select Gender </div>
+                </div>
+              </div>
+              <br>
+          <div class="form-group">
+            <!-- <label for="contactNo"><b>ContactNo</b></label><br> -->
+            <input formControlName="phone" id="phone" type="tel" class="form-control" placeholder="Phone number">
+            <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
+              <div *ngIf="f.phone.errors?.['required']" style="color: red;">PhoneNo is required.</div>
+            </div>
+          </div>
+          <br>
+          
+          <div class="form-group">
+            <!-- <label for="email"><b>Email</b></label><br> -->
+            <input formControlName="email" id="email" type="email" class="form-control" placeholder="Email">
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+              <div *ngIf="f.email.errors?.['required']" style="color: red;"> Email is required.</div>
+              </div>
+            </div>
+            <br>
+            
+            <div class="form-group">
+                <!-- <label for="userName"><b>UserName</b></label><br> -->
+                <input formControlName="userName" id="userName" type="text" class="form-control" placeholder="Username">
+                <div *ngIf="f.userName.touched && f.userName.invalid" class="alert alert-danger">
+                  <div *ngIf="f.userName.errors?.['required']" style="color: red;">UserName is required.</div>
+                  </div>
+                </div>
+                <br>
+                
+    
+                <div class="form-group">
+                    <!-- <label for="password"> <b>Password </b></label><br> -->
+                    <input formControlName="password" id="password" type="password" class="form-control" placeholder="Password">
+                    <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                      <div *ngIf="f.password.errors?.['required']" style="color: red;">Password is required.</div>
+                      
+                    </div>
+                    </div>
+                    <br>
+                    
+                    
+    
+                        <div class="form-group">
+                        <select formControlName="role" id="role" class="form-control" class="input-select" >
+                            <option value="">Role</option>
+                            <option vlaue="doctor">Doctor</option>
+                          </select>
+                          <div *ngIf="f.role.touched && f.role.invalid" class="alert alert-danger">
+                            <div *ngIf="f.role.errors?.['required']" style="color: red;"> Role is required.</div>
+                            </div>
+                          </div>
+                          <br>
+                        
+           
+             <button class="btn btn-dark" type="submit" >Submit</button>
+              <button class="btn btn-dark" type="reset" >Reset</button><br>
+              <!-- <a style="color:rgb(11, 11, 11);margin-top: 10px;" routerLink="/login">Have an Account?<i> Login</i></a>
+     -->
+        </form>
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    

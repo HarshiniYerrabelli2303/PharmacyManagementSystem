@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <h3>Login here!</h3>
+          
+         
+           <input type="text" name="userName" [(ngModel)]="userName"placeholder="Enter your user name here"><br/>
+          
+    
+           
+          <input type="password" name="password" [(ngModel)]="password" placeholder="Enter your password here"><br/>
+         
+              <button (click)=checkLogin() class="btn btn-dark">Login</button><br/>
+          <a style="color:rgb(12, 12, 11);margin-top: 10px;" routerLink="/register">Don't have an Account? Register</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

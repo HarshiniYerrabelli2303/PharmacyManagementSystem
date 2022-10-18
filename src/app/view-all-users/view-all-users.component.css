@@ -1,0 +1,38 @@
+
+th{
+    text-align: center;
+    
+  }
+
+  tr{
+    text-align: center;
+  }
+  
+.container{
+  padding: 130px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 40;
+  left: 0;
+  background-color: rgb(13, 13, 13);
+  overflow-x: hidden;
+  padding-top: 150px;
+ 
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: lightseagreen;
+}

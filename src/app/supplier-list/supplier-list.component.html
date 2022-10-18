@@ -1,0 +1,34 @@
+<h2>Supplier List </h2>
+<nav class="navbar">
+    <input class="form-control" type="text" name="name" [(ngModel)]="name"
+    (ngModelChange)="Search()" placeholder="Enter Name to Search">
+</nav>
+<table class="table table-striped">
+   
+    <thead>
+        <tr  class="list">
+            <th >Supplier Id</th>
+            <th >Supplier Name</th>
+            <th>Supplier Email</th>
+            <th >Contact No</th>
+            <th >Drug Name</th>
+            <th >Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let supplier of suppliers | paginate: {itemsPerPage:5,currentPage:p};">
+        <td>{{supplier.id}}</td>
+        <td>{{supplier.name}}</td>
+        <td>{{supplier.supplierEmail}}</td>
+        <td>{{supplier.contactNo}}</td>
+        <td>{{supplier.drugName}}</td>
+        <td>
+            <button (click)="updateSupplier(supplier.id,supplier.name,supplier.supplierEmail,supplier.contactNo,supplier.drugName)" class="btn btn-info">Update</button>
+            <button (click)="deleteSupplier(supplier.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+        </td>
+        </tr>
+    </tbody>
+</table>
+    <pagination-controls (pageChange)="p =$event "></pagination-controls>
+   
+

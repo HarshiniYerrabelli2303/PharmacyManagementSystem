@@ -1,0 +1,41 @@
+<div style="height:500px;width: 800px; " class="update">
+<div class="col-md-6 offset-md-3">
+    <h1 class="text-center">  Update Supplier</h1>
+    <h5 class="text-center">Please fill the below form to update</h5>
+    <form  (ngSubmit) = "onSave()">
+        <div class="col-md-6 offset-md-3">
+        <div class="form-group">
+            <label>Supplier Name </label>
+            <input type="text" class ="form-control" id = "name"
+                [(ngModel)] = "supplierModelObj.name" name = "name">
+        
+        </div>
+        <div class="form-group">
+            <label> Suplier Email</label>
+            <input type="email" class ="form-control" id = "supplierEmail"
+                [(ngModel)] = "supplierModelObj.supplierEmail" name = "supplierEmail">
+        </div>
+    
+        <div class="form-group">
+            <label> Contact No</label>
+            <input type="text" class ="form-control" id = "contactNo"
+                [(ngModel)] = "supplierModelObj.contactNo" name = "contactNo">
+        </div>
+        
+        <div class="form-group">
+            <label> Drug Name</label>
+            <input type="text" class ="form-control" id = "drugName"
+                [(ngModel)] = "supplierModelObj.drugName" name = "drugName">
+        </div>
+    
+        
+       
+        </div>
+    
+    <button class = "btn btn-success" type ="submit" style="margin-right:15px ">Submit</button>
+    <button class = "btn btn-success" type ="submit"(click)="back()" style="margin: left 30px">Back</button>
+    </form>
+
+    </div> 
+</div>
+    

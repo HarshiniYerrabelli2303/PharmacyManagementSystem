@@ -1,0 +1,11 @@
+.update{
+    background-color: pink;
+
+}
+.text-center{
+    
+    color:blue;
+}
+.col-md-6 offset-md-3{
+max-width: 600px;
+}

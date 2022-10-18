@@ -1,0 +1,37 @@
+
+    <div class="container">
+       <h2>Users List</h2>
+      
+    
+    <table class = "table table-striped" >
+       <thead>
+          <tr>
+             <th>UserId</th>
+             <th>FirstName</th>
+             <th>LastName</th>
+             <th>Gender</th>
+             <th>PhoneNumber</th>
+             <th>EmailId</th>
+             <th>Role</th>
+          </tr>
+       </thead>
+       <tbody>
+        <tr *ngFor ="let user of users ">
+          <td>{{user.userId}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.gender}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.role}}</td>
+         
+          
+        </tr>  
+       </tbody>
+    </table>
+    </div>
+    
+    
+    
+    
+    

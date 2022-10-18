@@ -1,7 +1,7 @@
 import { LocalizedString } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Drugs } from 'src/app/modules/drugs';
+import { Drugs } from 'src/app/models/drugs';
 import { DrugServiceService } from 'src/app/services/drug-service.service';
 
 

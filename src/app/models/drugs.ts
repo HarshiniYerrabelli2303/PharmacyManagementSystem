@@ -1,10 +1,10 @@
 export class Drugs{
     drugId:any
-	 suplierEmail:String=""
-	 drugName:String=""
+	 suplierEmail:string=""
+	 drugName:string=""
 	  quantity:number=0
 	  batchId:number=0
-	  expiredDate:String=""
+	  expiredDate:string=""
 	  price:number=0
 
 }

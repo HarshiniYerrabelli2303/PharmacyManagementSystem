@@ -1,0 +1,64 @@
+
+
+<div style="text-align: center;">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6">
+    <div class="card">
+<h2><i><b>My Profile</b></i></h2>
+<form (ngSubmit) = "onSubmit()">
+
+    <div class="form-group">
+    
+
+        <input type="text" class="form-control" id="firstName"
+                [(ngModel)]="users.firstName" name="firstName" placeholder="FirstName" disabled>
+
+    </div>
+
+    <div class="form-group">
+    
+
+        <input type="text" class="form-control" id="lastName"
+                [(ngModel)]="users.lastName" name="lastName" placeholder="LastName">
+
+    </div>
+
+    <div class="form-group">
+        
+        <input type="text" class="form-control" id="gender"
+                [(ngModel)]="users.gender" name="gender" placeholder="Gender">
+
+    </div>
+
+    <div class="form-group">
+        
+        <input type="tel" class="form-control" id="phone"
+                [(ngModel)]="users.phone" name="phone" placeholder="PhoneNo">
+
+    </div>
+
+    <div class="form-group">
+       
+        <input type="email" class="form-control" id="email"
+                [(ngModel)]="users.email" name="email" placeholder="Email">
+
+    </div>
+
+    <div class="form-group">
+       
+        <input type="text" class="form-control" id="role"
+                [(ngModel)]="users.role" name="role" placeholder="Role">
+
+    </div>
+
+    <button class="btn btn-dark" type="submit"> Submit</button>
+</form>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+

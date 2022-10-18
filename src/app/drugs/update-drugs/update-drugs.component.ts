@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { Drugs } from 'src/app/modules/drugs';
+import { Drugs } from 'src/app/models/drugs';
 import { DrugServiceService } from 'src/app/services/drug-service.service';
 
 

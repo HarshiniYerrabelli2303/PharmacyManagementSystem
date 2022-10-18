@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Drugs } from '../modules/drugs';
+import { Drugs } from '../models/drugs';
 import { CartserviceService } from '../services/cartservice.service';
 import { DrugServiceService } from '../services/drug-service.service';
 
