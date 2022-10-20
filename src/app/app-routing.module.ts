@@ -43,8 +43,8 @@ const routes: Routes = [
 { path : 'viewAllUsers' , component:ViewAllUsersComponent},
 { path : 'update/:userId', component:UpdateProfileComponent},
 //cart
-  { path: 'cart', component:CartComponent}
-
+  { path: 'cart', component:CartComponent},
+  {path:'/checkout',component:OrderComponent}
 ];
 
 @NgModule({
