@@ -35,7 +35,7 @@ export class SidebarComponent implements OnInit {
           this.DoctorRole = true;
         
         }
-        else if(role == 'admin'){
+        else if(role == "admin"){
           this.AdminRole = true;
         }
         else{
@@ -61,5 +61,5 @@ export class SidebarComponent implements OnInit {
       }
     )
   }
-
+ 
 }

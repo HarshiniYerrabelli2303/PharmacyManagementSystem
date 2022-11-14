@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CartItem } from '../models/CartItem';
 import { Drugs } from '../models/drugs';
 import { CartserviceService } from '../services/cartservice.service';
 import { DrugServiceService } from '../services/drug-service.service';
@@ -44,11 +45,15 @@ export class ProductsComponent implements OnInit {
   @Input("searchedText") __searchedProduct: string=''; 
 
   
- 
+  
 
   
-  addToCart(drug:any){    
-    this.cart.addtoCart(drug);
+  addToCart(drug:Drugs){    
+    console.log(`Adding to cart: ${drug.drugName}, ${drug.price}`);
+    let theCartItem = new CartItem(drug.drugId, drug.drugName, drug.price);
+
+ 
+    this.cart.addToCart(theCartItem);
     window.alert("Your Product has been added to cart!")
     localStorage.setItem('localCart',JSON.stringify(drug));
   }

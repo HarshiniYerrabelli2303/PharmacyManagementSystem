@@ -1,5 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ADoctorOrderWindowComponent } from './a-doctor-order-window/a-doctor-order-window.component';
+import { PickupOrderWindowComponent } from './a-doctor-order-window/pickup-order-window/pickup-order-window.component';
+import { VerifiedDoctorOrderWindowComponent } from './a-doctor-order-window/verified-doctor-order-window/verified-doctor-order-window.component';
+import { AExpOutofstockWindowComponent } from './a-exp-outofstock-window/a-exp-outofstock-window.component';
+import { AboutToExpireWindowComponent } from './a-exp-outofstock-window/about-to-expire-window/about-to-expire-window.component';
+import { AboutToFinishWindowComponent } from './a-exp-outofstock-window/about-to-finish-window/about-to-finish-window.component';
+import { OutOfStockWindowComponent } from './a-exp-outofstock-window/out-of-stock-window/out-of-stock-window.component';
+import { SalesChartComponent } from './a-sales-window/sales-chart/sales-chart.component';
+import { SalesReportComponent } from './a-sales-window/sales-report/sales-report.component';
 import { AddSupplierComponent } from './add-supplier/add-supplier.component';
 
 import { CartComponent } from './cart/cart.component';
@@ -42,9 +51,23 @@ const routes: Routes = [
 { path : 'logout', component: LogoutComponent, canActivate: [AuthGaurdService] },
 { path : 'viewAllUsers' , component:ViewAllUsersComponent},
 { path : 'update/:userId', component:UpdateProfileComponent},
+
+{path: 'doctororders/new', component: VerifiedDoctorOrderWindowComponent },
+  {path: 'doctororders', component: ADoctorOrderWindowComponent },
+  {path: 'doctororders/pickedUp', component: PickupOrderWindowComponent },
+
+  {path: 'expoutofstock', component: AExpOutofstockWindowComponent },
+  {path: 'expoutofstock/abouttoexpire', component: AboutToExpireWindowComponent },
+
+  {path: 'outofstock', component: OutOfStockWindowComponent },
+  {path: 'outofstock/abouttofinish', component: AboutToFinishWindowComponent },
+
+
+  {path: 'salesreport', component: SalesChartComponent },
+  {path: 'salesreport/report', component: SalesReportComponent },
 //cart
   { path: 'cart', component:CartComponent},
-  {path:'/checkout',component:OrderComponent}
+  {path:'checkout',component:OrderComponent}
 ];
 
 @NgModule({

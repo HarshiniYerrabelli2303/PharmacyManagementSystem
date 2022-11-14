@@ -55,6 +55,12 @@ import { AuthenticationService } from './services/authentication.service';
 
 import { AuthGaurdService } from './services/auth-gaurd.service';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { AboutToOutofStockWindowComponent } from './about-to-outof-stock-window/about-to-outof-stock-window.component';
+import { AboutToOutofStockItemsComponent } from './about-to-outof-stock-window/about-to-outof-stock-items/about-to-outof-stock-items.component';
+import { ASalesWindowComponent } from './a-sales-window/a-sales-window.component';
+import { SalesChartComponent } from './a-sales-window/sales-chart/sales-chart.component';
+import { SalesReportComponent } from './a-sales-window/sales-report/sales-report.component';
+import { SalesReportItemsComponent } from './a-sales-window/sales-report/sales-report-items/sales-report-items.component';
 
 @NgModule({
   declarations: [
@@ -81,8 +87,13 @@ import { CartItemComponent } from './cart-item/cart-item.component';
     UpdateSupplierComponent,
     DeleteSupplierComponent,
     CartItemComponent,
+    AboutToOutofStockWindowComponent,
+    AboutToOutofStockItemsComponent,
+    ASalesWindowComponent,
+    SalesReportComponent,
+    SalesReportItemsComponent,
+    SalesChartComponent,
 
-  
   
   ],
   imports: [
